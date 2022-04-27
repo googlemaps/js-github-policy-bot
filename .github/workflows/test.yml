@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Test
         run: |
-          npm i
+          npm ci
           npm run lint
           npm test
       - uses: codecov/codecov-action@v1

@@ -33,7 +33,7 @@ jobs:
             ${{ runner.os }}-node-
       - name: Test
         run: |
-          npm i
+          npm ci
           npm run lint
           npm test
       - name: Release
