@@ -19,6 +19,8 @@ on:
     - cron: "0 12 * * *"
 jobs:
   e2e:
+    name: e2e
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: npm i
