@@ -95,10 +95,7 @@ program.commands.forEach((cmd) => {
       new Option(
         "-k, --kind <string>",
         "The primary Language or framework. Not all options change behavior at this time."
-      ).choices([
-        "js",
-        "none",
-      ])
+      ).choices(["js", "none"])
     );
 });
 

@@ -25,4 +25,4 @@ export const kindToLanguage = (k: Kind): Language | undefined => {
 };
 
 export const fileExists = async (p: string) =>
-  !!(await fs.stat(p).catch((e) => false));
+  !!(await fs.stat(p).catch(() => false));

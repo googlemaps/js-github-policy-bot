@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-import {
-  Validator as Validator_,
-} from "directory-schema-validator";
+import { Validator as Validator_ } from "directory-schema-validator";
 import type { ErrorObject, Options as AJVOPtions } from "ajv";
 import ajv from "ajv";
-import type {Options} from "../types";
+import type { Options } from "../types";
 
 // TODO pass options to AJV
 class Validator extends Validator_ {
@@ -32,6 +30,7 @@ class Validator extends Validator_ {
 export const check = (
   directory: string,
   options: Options
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): ErrorObject<string, Record<string, any>, unknown>[] | null | undefined => {
   const schema = options.config.files;
   const validator = new Validator({ allErrors: true });

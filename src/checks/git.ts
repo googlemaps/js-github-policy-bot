@@ -27,7 +27,7 @@ export const isOnMainBranch = (directory: string): boolean => {
   );
 };
 
-export const check = (directory: string, options): string[] | undefined => {
+export const check = (directory: string): string[] | undefined => {
   const errors: string[] = [];
 
   if (isGitDirty(directory)) {

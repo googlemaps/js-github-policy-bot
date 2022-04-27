@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import type { InitOptions} from "../types";
+import type { InitOptions } from "../types";
 import fs from "fs/promises";
 import nunjucks from "nunjucks";
 import path from "path";
@@ -40,7 +40,7 @@ const write = async (directory: string, options: InitOptions, file: string) => {
   const source = path.join(__dirname, "templates", file);
   const dest = path.join(directory, file.replace(`.${options.kind}.`, "."));
 
-  if (!options.overwrite && await fileExists(dest)) {
+  if (!options.overwrite && (await fileExists(dest))) {
     console.log(chalk.green(`- Skipng existing file: ${dest}`));
     return;
   }
