@@ -7,6 +7,8 @@
     "build": "npm-run-all clean -p build:*",
     "build:cli": "node build.mjs",
     "clean": "rimraf dist/",
+    "format": "eslint . --fix",
+    "lint": "eslint .",
     "test": "run-p test:*",
     "test:jest": "jest/src --passWithNoTests",
     "test:types": "tsc --noEmit"
