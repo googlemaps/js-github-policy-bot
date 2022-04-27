@@ -1,0 +1,47 @@
+
+# Copyright 2022 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: Release
+on:
+  push:
+    branches:
+      - main
+concurrency: release
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - uses: actions/checkout@v2
+      {% block before %}# TODO build, test etc{% endblock %} 
+      - name: Release
+        uses: cycjimmy/semantic-release-action@v2
+        with:
+          # TODO consider using https://github.com/google/semantic-release-replace-plugin
+          extra_plugins: |
+          {% block plugins %}
+            @semantic-release/commit-analyzer
+            semantic-release-interval
+            @semantic-release/release-notes-generator
+            @semantic-release/git
+            @semantic-release/github
+            @googlemaps/semantic-release-config 
+          {% endblock %}
+        env:
+          GH_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+          NPM_TOKEN:{% raw %} ${{ secrets.NPM_WOMBAT_TOKEN }}{% endraw %}
+        {% block after %}{% endblock %} 
