@@ -32,7 +32,7 @@ export enum Language {
 }
 
 export enum KindLanguage {
-  js = Language.javascript,
+  js = "javascript",
   none = "",
 }
 
@@ -41,6 +41,7 @@ export interface Config {
 }
 
 export interface Options {
+  overwrite?: boolean;
   debug?: boolean;
   config?: Config;
   kind: Kind;
