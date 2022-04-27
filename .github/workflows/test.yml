@@ -18,5 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # TODO run tests
+      - name: Test
+        run: |
+          npm i
+          npm run lint
+          npm test
       - uses: codecov/codecov-action@v1
