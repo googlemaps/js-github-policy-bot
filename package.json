@@ -10,7 +10,7 @@
     "format": "eslint src --fix",
     "lint": "eslint src",
     "test": "run-p test:*",
-    "test:jest": "jest/src --passWithNoTests",
+    "test:jest": "jest src --passWithNoTests",
     "test:types": "tsc --noEmit"
   },
   "files": [
@@ -24,7 +24,7 @@
     "probot"
   ],
   "bin": {
-    "github-policy-bot": "dist/cli.js"
+    "github-policy-bot": "dist/cli.mjs"
   },
   "author": "Justin Poehnelt",
   "license": "Apache-2.0",
