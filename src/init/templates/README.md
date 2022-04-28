@@ -1,7 +1,7 @@
 # TODO
 
-{% if kind == 'js'%}[![npm](https://img.shields.io/npm/v/@googlemaps/github-policy-bot)](https://www.npmjs.com/package/@googlemaps/{{ repos}}){% endif %}
-![Test](https://github.com/googlemaps/{{ repository }}/workflows/Build/badge.svg)
+{% if kind == 'js'%}[![npm](https://img.shields.io/npm/v/@googlemaps/github-policy-bot)](https://www.npmjs.com/package/@googlemaps/{{ name}}){% endif %}
+![Test](https://github.com/googlemaps/{{ repository }}/workflows/Test/badge.svg)
 ![Release](https://github.com/googlemaps/{{ repository }}/workflows/Release/badge.svg)
 [![codecov](https://codecov.io/gh/googlemaps/{{ repository }}/branch/main/graph/badge.svg)](https://codecov.io/gh/googlemaps/{{ repository }})
 ![GitHub contributors](https://img.shields.io/github/contributors/googlemaps/{{ repository }}?color=green)
@@ -16,7 +16,7 @@ TODO
 
 {% if kind == 'js'%}
 ```js
-npm i @googlemaps/{{ repository | replace("js-", "")}}
+npm i @googlemaps/{{ name }}
 ```
 {% endif %}
 
