@@ -25,7 +25,6 @@ build({
   outfile: `dist/cli.mjs`,
   loader: { ".yml": "file" },
   format: "esm",
-  external: ["./node_modules/*"],
   banner: {
     js: "#!/usr/bin/env node",
   },
