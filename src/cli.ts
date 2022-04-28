@@ -83,7 +83,7 @@ program
   .argument("<string>", "Path to the repository")
   .option("-u, --users <string...>", "GitHub user")
   .option("-t, --team <string>", "GitHub team")
-  .option("-r, --repo <string>", "Repository name")
+  .option("-r, --repository <string>", "Repository name with prefix")
   .option("--no-overwrite", "Do not overwrite existing files")
   .action(init);
 

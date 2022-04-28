@@ -39,15 +39,16 @@ const files = {
 const write = async (directory: string, options: InitOptions, file: string) => {
   const source = path.join(__dirname, "templates", file);
   const dest = path.join(directory, file.replace(`.${options.kind}.`, "."));
+  const name = options.repository.split("-").slice(1).join("-");
 
   if (!options.overwrite && (await fileExists(dest))) {
-    console.log(chalk.green(`- Skipng existing file: ${dest}`));
+    console.log(chalk.green(`- Skipping existing file: ${dest}`));
     return;
   }
 
   console.log(chalk.green(`- Writing file: ${dest}`));
 
-  let output = nunjucks.render(source, options);
+  let output = nunjucks.render(source, { name, ...options });
 
   switch (path.extname(dest)) {
     case ".yml":

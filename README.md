@@ -1,7 +1,7 @@
 # Policy Bot for Google Maps Repositories
 
 [![npm](https://img.shields.io/npm/v/@googlemaps/github-policy-bot)](https://www.npmjs.com/package/@googlemaps/github-policy-bot)
-![Build](https://github.com/googlemaps/js-github-policy-bot/workflows/Build/badge.svg)
+![Test](https://github.com/googlemaps/js-github-policy-bot/workflows/Test/badge.svg)
 ![Release](https://github.com/googlemaps/js-github-policy-bot/workflows/Release/badge.svg)
 [![codecov](https://codecov.io/gh/googlemaps/js-github-policy-bot/branch/main/graph/badge.svg)](https://codecov.io/gh/googlemaps/js-github-policy-bot)
 ![GitHub contributors](https://img.shields.io/github/contributors/googlemaps/js-github-policy-bot?color=green)
@@ -19,15 +19,15 @@ npx @googlemaps/github-policy-bot \
   check DIRECTORY_OF_PROJECT
 ```
 
+The tool performs checks beyond the minimal required for Google Open Source including specific files around GitHub processes, bots, and workflows.
 ### `init`
 
 ```sh
 npx @googlemaps/github-policy-bot \
   init DIRECTORY_OF_PROJECT \
-  -u GITHUB_USERNAME GITHUB_USERNAME2 \
-  -t googlemaps/eng \
-  --kind js \
+  --users GITHUB_USERNAME GITHUB_USERNAME2 \ # for blunderbuss and CODEOWNERS
+  --team googlemaps/eng \ # for CODEOWNERS
+  --repository js-github-policy-bot \
+  --kind js \ # should match prefix of repository
   --no-overwrite
 ```
-
-The tool performs checks beyond the minimal required for Google Open Source including specific files around GitHub processes, bots, and workflows.
