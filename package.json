@@ -1,6 +1,6 @@
 {
   "name": "@googlemaps/github-policy-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Enforce policies for github.com/googlemaps repositories",
   "main": "dist/index.js",
   "scripts": {
