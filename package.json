@@ -32,9 +32,7 @@
     "policy",
     "probot"
   ],
-  "bin": {
-    "googlemaps-github-policy-bot": "dist/cli.mjs"
-  },
+  "bin": "dist/cli.mjs",
   "author": "Justin Poehnelt",
   "license": "Apache-2.0",
   "dependencies": {

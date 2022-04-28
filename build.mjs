@@ -27,7 +27,7 @@ build({
   format: "esm",
   external: ["./node_modules/*"],
   banner: {
-    js: 'import { createRequire as topLevelCreateRequire } from "module";\n const require = topLevelCreateRequire(import.meta.url);',
+    js: "#!/usr/bin/env node",
   },
   plugins: [filelocPlugin()],
 });
