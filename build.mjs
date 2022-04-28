@@ -22,9 +22,9 @@ build({
   entryPoints: [`src/cli.ts`],
   bundle: true,
   platform: "node",
-  outfile: `dist/cli.js`,
+  outfile: `dist/cli.mjs`,
   loader: { ".yml": "file" },
-  format: "cjs",
+  format: "esm",
   external: ["./node_modules/*"],
   banner: {
     js: 'import { createRequire as topLevelCreateRequire } from "module";\n const require = topLevelCreateRequire(import.meta.url);',
