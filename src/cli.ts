@@ -81,9 +81,9 @@ program
 program
   .command("init")
   .argument("<string>", "Path to the repository")
-  .option("-u, --users <string...>", "GitHub user")
+  .requiredOption("-u, --users <string...>", "GitHub user")
+  .requiredOption("-r, --repository <string>", "Repository name with prefix")
   .option("-t, --team <string>", "GitHub team")
-  .option("-r, --repository <string>", "Repository name with prefix")
   .option("--no-overwrite", "Do not overwrite existing files")
   .action(init);
 

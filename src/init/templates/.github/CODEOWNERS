@@ -15,7 +15,7 @@
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners
 
 # Specific to the repository
-* @{{ team }} {% for user in users %}@{{user}}{% if not loop.last%} {% endif %}{% endfor %}
+* {% if team %}@{{ team }} {% endif %}{% for user in users %}@{{user}}{% if not loop.last%} {% endif %}{% endfor %}
 
 # GitHub specific processes
 .github/ @googlemaps/admin
