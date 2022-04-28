@@ -15,19 +15,19 @@
  */
 
 import { build } from "esbuild";
-import pkg  from "esbuild-plugin-fileloc";
-const {filelocPlugin} = pkg;
+import pkg from "esbuild-plugin-fileloc";
+const { filelocPlugin } = pkg;
 
 build({
   entryPoints: [`src/cli.ts`],
   bundle: true,
   platform: "node",
-  outfile: `dist/cli.mjs`,
+  outfile: `dist/cli.js`,
   loader: { ".yml": "file" },
-  format: "esm",
+  format: "cjs",
   external: ["./node_modules/*"],
   banner: {
     js: 'import { createRequire as topLevelCreateRequire } from "module";\n const require = topLevelCreateRequire(import.meta.url);',
   },
   plugins: [filelocPlugin()],
-}).catch(() => process.exit(1));
+});
