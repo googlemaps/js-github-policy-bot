@@ -66,6 +66,6 @@ export const init = async (directory: string, options: InitOptions) => {
   options.language = kindToLanguage(options.kind);
 
   await Promise.all(
-    files[options.kind].map((file) => write(directory, options, file))
+    files[options.kind ?? "none"].map((file) => write(directory, options, file))
   );
 };
