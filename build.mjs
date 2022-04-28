@@ -22,9 +22,9 @@ build({
   entryPoints: [`src/cli.ts`],
   bundle: true,
   platform: "node",
-  outfile: `dist/cli.mjs`,
+  outfile: `dist/cli.js`,
   loader: { ".yml": "file" },
-  format: "esm",
+  format: "cjs",
   banner: {
     js: "#!/usr/bin/env node",
   },

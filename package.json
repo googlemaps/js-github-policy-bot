@@ -32,7 +32,7 @@
     "policy",
     "probot"
   ],
-  "bin": "dist/cli.mjs",
+  "bin": "dist/cli.js",
   "author": "Justin Poehnelt",
   "license": "Apache-2.0",
   "dependencies": {
