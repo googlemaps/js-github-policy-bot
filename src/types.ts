@@ -41,7 +41,6 @@ export interface Config {
 }
 
 export interface Options {
-  overwrite?: boolean;
   debug?: boolean;
   config?: Config;
   kind: Kind;
@@ -50,6 +49,9 @@ export interface Options {
 export interface InitOptions extends Options {
   repository: string;
   language: Language;
+  team: string;
+  users: string[];
+  overwrite?: boolean;
 }
 
 export type Errors = (ErrorObject | string)[];

@@ -66,6 +66,10 @@ const write = async (directory: string, options: InitOptions, file: string) => {
 export const init = async (directory: string, options: InitOptions) => {
   options.language = kindToLanguage(options.kind);
 
+  if (options.team) {
+    options.team = options.team.replace("@", "");
+  }
+
   await Promise.all(
     files[options.kind ?? "none"].map((file) => write(directory, options, file))
   );

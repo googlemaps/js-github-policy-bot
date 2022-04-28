@@ -12,14 +12,15 @@
 
 This package provides a command line tool for enforcing policies on GitHub repositories and initializing files to meet the requirements of these policies.
 
-
 ### `check`
+
 ```sh
 npx @googlemaps/github-policy-bot \
   check DIRECTORY_OF_PROJECT
 ```
 
 The tool performs checks beyond the minimal required for Google Open Source including specific files around GitHub processes, bots, and workflows.
+
 ### `init`
 
 ```sh
@@ -31,3 +32,23 @@ npx @googlemaps/github-policy-bot \
   --kind js \ # should match prefix of repository
   --no-overwrite
 ```
+
+Which will output the following:
+
+```
+- Writing file: README.md
+- Writing file: SECURITY.md
+- Writing file: .github/blunderbuss.yml
+- Writing file: .github/CODEOWNERS
+- Writing file: .github/workflows/codeql.yml
+- Writing file: .github/workflows/test.yml
+- Writing file: .github/workflows/release.yml
+```
+
+For more information run:
+
+```sh
+npx @googlemaps/github-policy-bot help init
+```
+
+It is recommended to adjust the generated files before committing them to the repository. The templates for these files are defined at https://github.com/googlemaps/js-github-policy-bot/tree/main/src/init/templates.
