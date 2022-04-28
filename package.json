@@ -3,6 +3,14 @@
   "version": "1.0.2",
   "description": "Enforce policies for github.com/googlemaps repositories",
   "main": "dist/index.js",
+  "homepage": "https://github.com/googlemaps/js-github-policy-bot",
+  "bugs": {
+    "url": "https://github.com/googlemaps/js-github-policy-bot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/googlemaps/js-github-policy-bot.git"
+  },
   "scripts": {
     "build": "npm-run-all clean -p build:*",
     "build:cli": "node build.mjs",
