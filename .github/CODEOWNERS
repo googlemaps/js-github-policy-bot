@@ -15,7 +15,6 @@
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners
 
 # Specific to the repository
-* @googlemaps/eng @jpoehnelt
 
 # GitHub specific processes
 .github/ @googlemaps/admin
