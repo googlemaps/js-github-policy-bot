@@ -37,7 +37,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "chalk": "^5.0.1",
-    "commander": "^9.1.0",
+    "commander": "^10.0.0",
     "directory-schema-validator": "^1.0.9",
     "glob": "^8.0.3",
     "is-git-dirty": "^2.0.1",
