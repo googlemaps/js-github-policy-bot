@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Test
-on: [push, pull_request, workflow_call]
+name: Docs
+on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
-    steps:      
+    steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
@@ -25,7 +25,14 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - run: npm i
-      - run: npm run lint
-      - run: npm test
-      - uses: codecov/codecov-action@v1
+      - run: |
+          npm i
+          npm run docs
+      - uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          user_name: 'googlemaps-bot'
+          user_email: 'googlemaps-bot@users.noreply.github.com'
+          commit_message: ${{ github.event.head_commit.message }}
