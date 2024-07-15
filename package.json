@@ -43,7 +43,7 @@
     "is-git-dirty": "^2.0.1",
     "nunjucks": "^3.2.3",
     "ora": "^8.0.1",
-    "prettier": "^2.6.1",
+    "prettier": "^3.3.3",
     "probot": "^13.0.1",
     "yaml": "^2.1.1"
   },
